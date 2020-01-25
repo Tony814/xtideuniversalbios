@@ -152,6 +152,7 @@ AH8h_LimitAXtoMaximumLCylinders:
 %ifdef RESERVE_DIAGNOSTIC_CYLINDER
 	dec		ax
 %endif
+AH8h_DPT_LimitAXtoMaximumLCylinders:
 	MIN_U	ax, MAX_LCHS_CYLINDERS
 	ret
 

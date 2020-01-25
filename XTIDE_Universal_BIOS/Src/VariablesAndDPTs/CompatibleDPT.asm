@@ -95,7 +95,7 @@ GetBufferForDrive80hToESDI:
 ;--------------------------------------------------------------------
 FillToESDIusingDPTfromDSSI:
 	mov		ax, [si+DPT.wLchsCylinders]
-	call	AH8h_LimitAXtoMaximumLCylinders
+	call	AH8h_DPT_LimitAXtoMaximumLCylinders
 	test	BYTE [si+DPT.bFlagsLow], MASKL_DPT_TRANSLATEMODE
 	jz		SHORT FillStandardDPTtoESDIfromDPTinDSSI
 	; Fall to FillTranslatedDPTtoESDIfromDPTinDSSI
